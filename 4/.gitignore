@@ -8,4 +8,6 @@ CMakeCache.txt
 Makefile
 *.cmake
 *.tcl
-*.cbp
+results/
+venv/
+resources/Lenna.png
