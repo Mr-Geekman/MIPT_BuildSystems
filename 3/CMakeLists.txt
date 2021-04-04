@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 # option for building for ARM
-option(FOR_ARM "Build for ARM" OFF)
+option(FOR_ARM "Build for ARM" ON)
 
 # check if we pass suitable arguments if compile for arm
 if(FOR_ARM)
