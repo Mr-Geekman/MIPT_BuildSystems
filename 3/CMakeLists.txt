@@ -1,20 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 
 # option for building for ARM
-option(FOR_ARM "Build for ARM" ON)
+option(FOR_ARM "Build for ARM" OFF)
 
 # check if we pass suitable arguments if compile for arm
 if(FOR_ARM)
     message("Compiling for ARM")
-
-    if("${CMAKE_TOOLCHAIN_FILE}" STREQUAL "")
-        message(FATAL_ERROR "Need path to toolchain file in variable CMAKE_TOOLCHAIN_FILE for compilation")
-    endif()
+    set(CMAKE_TOOLCHAIN_FILE toolchain-arm.cmake)
 
     if("${ARM_TOOLCHAIN_PATH}" STREQUAL "")
-        message(FATAL_ERROR "Need path to toolchain in variable ARM_TOOLCHAIN_PATH for compilation")
+        message(FATAL_ERROR "Need path to toolchain in variable ARM_TOOLCHAIN_PATH")
     endif()
-
 endif()
 
 project(SimpleLibrary)
