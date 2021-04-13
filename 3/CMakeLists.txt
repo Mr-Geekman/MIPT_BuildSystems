@@ -28,9 +28,17 @@ add_executable(MainLib main_lib.cpp)
 
 target_link_libraries(MainLib buffer)
 
+# add public headers
+set_target_properties(
+    MainLib
+    PROPERTIES
+    PUBLIC_HEADER include/buffer.h
+)
+
 # installation
 install(
     TARGETS Main MainLib buffer
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
+    PUBLIC_HEADER DESTINATION include
 )
